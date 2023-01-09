@@ -15,5 +15,6 @@ jobs:
             LINTER_RULES_PATH: /
             JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
             VALIDATE_JAVASCRIPT_ES: true
-          run: date
+        - run: npm install
+        - run: npm test
    
