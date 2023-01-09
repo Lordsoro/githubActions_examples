@@ -11,7 +11,7 @@ jobs:
           uses: github/super-linter@latest
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            DEFAULT_BRANCH: nodejs_example
+            DEFAULT_BRANCH: main
             LINTER_RULES_PATH: /
             JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
             VALIDATE_JAVASCRIPT_ES: true
