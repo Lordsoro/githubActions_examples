@@ -2,7 +2,7 @@ name: main_workflow.yml
 
 on: [push]
 jobs:
-  Check-bats-version:
+  prueba:
     runs-on: windows-latest
     steps:
         - name: Checkout code
