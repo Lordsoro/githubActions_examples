@@ -7,7 +7,7 @@ jobs:
     steps:
         - name: Checkout code
           uses: actions/checkout@v2
-        - name: linter execution
+        - name: Super-linter
           uses: github/super-linter@v3
           env:
             DEFAULT_BRANCH: nodejs_example
