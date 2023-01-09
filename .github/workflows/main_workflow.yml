@@ -2,7 +2,6 @@ name: main_workflow.yml
 
 on: [push]
 jobs:
-  name: CheckOut code
   runs-on: buntu-latest
   steps:
     - name: Checkout code
