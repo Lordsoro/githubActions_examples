@@ -1,4 +1,4 @@
-name: main_workflow
+name: main_workflow.yml
 
 on: [push]
 jobs:
