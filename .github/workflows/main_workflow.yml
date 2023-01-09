@@ -2,6 +2,7 @@ name: main_workflow.yml
 
 on: [push]
 jobs:
+  name: Lint code
   runs-on: windows-latest
   steps:
     - name: Checkout code
