@@ -10,10 +10,9 @@ jobs:
         - name: Super-linter
           uses: github/super-linter@latest
           env:
-            LINTER_RULES_PATH: /
-            VALIDATE_ALL_CODEBASE: true
-            DEFAULT_BRANCH: main
-            JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
-            VALIDATE_JAVASCRIPT_ES: true
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   
+           DEFAULT_BRANCH: main
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           LINTER_RULES_PATH: /
+           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+           VALIDATE_JAVASCRIPT_ES: true
+
