@@ -1,0 +1,7 @@
+name: Say hello
+
+on: [push]
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
