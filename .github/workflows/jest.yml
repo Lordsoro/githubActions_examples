@@ -1,4 +1,4 @@
-name: main_workflow
+name: jest_workflow
 
 on:
   push:
