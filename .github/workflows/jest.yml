@@ -3,7 +3,7 @@ name: jest_workflow
 on:
   push:
     branches:
-      - nodejs_linter_job
+      - nodejs_jest
 
 jobs:
   linter-execution:
