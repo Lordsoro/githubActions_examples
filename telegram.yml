@@ -1,0 +1,6 @@
+name: envio_telegram
+description: custom action to send messages
+author: salva
+runs:
+  using: node16
+  main: dist/telegramMain.js
