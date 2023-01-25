@@ -1,0 +1,23 @@
+name: Telegram Workflow
+
+on: push
+
+jobs:
+  envio_mensaje:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set environment variables
+        run: |
+          echo "TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }}" >> $GITHUB_ENV
+          echo "TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}" >> $GITHUB_ENV
+          echo "NAME=${GITHUB_ACTOR}" >> $GITHUB_ENV
+
+      - name: Execute custom action
+        uses: ./.github/actions/send_message
+
+      - name: Send message
+        run: node ./.github/actions/send_message.js
