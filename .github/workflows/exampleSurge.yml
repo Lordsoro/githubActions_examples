@@ -19,6 +19,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: examples
+        path: build
 
   deploy:
     runs-on: ubuntu-latest
@@ -32,4 +33,5 @@ jobs:
       env:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
     needs: build
+
 
