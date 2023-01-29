@@ -3,7 +3,7 @@ name: example_workflow
 on:
   push:
     branches:
-      - created
+      - surge
 
 jobs:
   build:
@@ -30,7 +30,6 @@ jobs:
     - name: Deploy to surge.sh
       uses: dswistowski/surge-sh-action@v1
       env:
-        SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
     needs: build
 
