@@ -1,14 +1,14 @@
 name: 'Modify Readme Action'
-description: 'Action to modify the readme.md file with a random meme text'
+description: 'Action para modificar texto meme'
 inputs:
   positive_phrase:
-    description: 'A positive phrase'
+    description: 'frase correcto'
     required: true
   negative_phrase:
-    description: 'A negative phrase'
+    description: 'frase error'
     required: true
   result_tests:
-    description: 'Result of the test execution'
+    description: 'Resultado'
     required: true
 outputs:
   message:
