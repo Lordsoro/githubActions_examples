@@ -1,18 +1,19 @@
 name: 'Modify Readme Action'
-description: 'Action para modificar texto meme'
+description: 'modificar archivo readme'
 inputs:
   positive_phrase:
     description: 'frase correcto'
     required: true
   negative_phrase:
-    description: 'frase error'
+    description: 'frase incorrecto'
     required: true
   result_tests:
     description: 'Resultado'
     required: true
 outputs:
   message:
-    description: 'Response message'
+    description: 'Respuesta'
 runs:
-  using: "node12"
-  main: "index.js"
+  using: 'node12'
+  main: 'index.js'
+
