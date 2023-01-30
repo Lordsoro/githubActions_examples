@@ -35,4 +35,7 @@ jobs:
           git add README.md
           git commit -m "Add meme to README"
           git push
+      - name: Pull changes
+        run: |
+          git pull origin HEAD
  
