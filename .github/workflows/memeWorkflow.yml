@@ -1,0 +1,27 @@
+name: My Workflow
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: npm test
+
+      - name: Add meme to README
+        uses: ./
+        with:
+          positive_phrase: "Los tests han funcionado y lo sabes"
+          negative_phrase: "Los tests han fallado y lo sabes"
+          result_tests: ${{ job.status }}
+      - name: Commit and push
+        run: |
+          git config --local user.email "soro_24@hotmail.com"
+          git config --local user.name "Lordsoro"
+          git add README.md
+          git commit -m "Add meme to README"
+          git push
