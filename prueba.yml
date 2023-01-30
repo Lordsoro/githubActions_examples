@@ -1,0 +1,37 @@
+name: example_workflow
+
+on:
+  push:
+    branches:
+      - surge
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build static files
+        run: |
+          npm install
+          npm run build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: examples
+          path: build
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: examples
+      - name: Deploy to surge.sh
+  uses: dswistowski/surge-sh-action@v1
+  env:
+    SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+    SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+  with:
+    project: .
