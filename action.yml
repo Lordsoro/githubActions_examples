@@ -1,27 +1,15 @@
-name: MemeWorkflow
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Run tests
-      run: npm test
-
-    - name: Add meme to README
-      uses: ./ # Use the action in the root directory of the repository
-      with:
-        positive_phrase: 'los tests funcionan y los sabes'
-        negative_phrase: 'los tests no funcionan y lo sabes'
-        result_tests: ${{ job.status }}
-    - name: Commit and push
-      run: |
-        git config --local user.email "soro_24@hotmail.com"
-        git config --local user.name "Lordsoro"
-        git add README.md
-        git commit -m "Add meme to README"
-        git push
+name: 'Modify Readme Action'
+description: 'Action to modify the readme.md file with a random meme text'
+inputs:
+  positive_phrase:
+    description: 'A positive phrase'
+    required: true
+  negative_phrase:
+    description: 'A negative phrase'
+    required: true
+  result_tests:
+    description: 'Result of the test execution'
+    required: true
+outputs:
+  message:
+    description: 'Response message'
