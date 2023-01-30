@@ -29,7 +29,7 @@ jobs:
           negative_phrase: 'Los tests no han funcionado y lo sabes'
           result_tests: ${{ needs.run_tests.outputs.result }}
       - name: Commit and push
-        uses: actions/git-commit-and-push@v2
+        uses: actions/github-script@v2
         with:
           push: true
           commit_message: 'Modificado readme'
