@@ -29,7 +29,10 @@ jobs:
           negative_phrase: 'Los tests no han funcionado y lo sabes'
           result_tests: ${{ needs.run_tests.outputs.result }}
       - name: Commit and push
-        uses: actions/github-script@v2
-        with:
-          push: true
-          commit_message: 'Modificado readme'
+        run: |
+          git config --local user.email "soro_24@hotmail.com"
+          git config --local user.name "Lordsoro"
+          git add README.md
+          git commit -m "Add meme to README"
+          git push
+ 
