@@ -13,3 +13,6 @@ inputs:
 outputs:
   message:
     description: 'Response message'
+runs:
+  using: "node12"
+  main: "index.js"
