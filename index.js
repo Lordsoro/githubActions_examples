@@ -1,5 +1,4 @@
-
-const fs = require("fs");
+const fs = require('fs');
 
 async function addMemeToReadme(positive_phrase, negative_phrase, result_tests) {
     let phrase;
@@ -8,16 +7,15 @@ async function addMemeToReadme(positive_phrase, negative_phrase, result_tests) {
     } else {
         phrase = negative_phrase;
     }
-
-    // Read the README file
-    let readmeContent = fs.readFileSync("README.md", "utf-8");
-
     
-    readmeContent = readmeContent + "\n" + phrase;
-
-    
-    fs.writeFileSync("README.md", readmeContent);
+    fs.readFile('README.md', 'utf-8', (err, data) => {
+        if (err) throw err;
+        const newData = data + `\n\n# ${phrase}`;
+        fs.writeFile('README.md', newData, (err) => {
+            if (err) throw err;
+            console.log('README.md has been modified');
+        });
+    });
 }
 
 module.exports = addMemeToReadme;
-
