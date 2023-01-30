@@ -28,6 +28,9 @@ jobs:
           positive_phrase: 'Los tests han funcionado y lo sabes'
           negative_phrase: 'Los tests no han funcionado y lo sabes'
           result_tests: ${{ needs.run_tests.outputs.result }}
+        run: |
+          node index.js
+
       - name: Commit and push
         run: |
           git config --local user.email "soro_24@hotmail.com"
