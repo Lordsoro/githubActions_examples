@@ -9,5 +9,5 @@ async function addMemeToReadme(positive_phrase, negative_phrase, result_tests) {
         phrase = negative_phrase;
     }
 
-
+}
 module.exports = addMemeToReadme;
