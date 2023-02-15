@@ -1,4 +1,4 @@
-name: versions
+name: jest_workflow
 
 on:
   push:
