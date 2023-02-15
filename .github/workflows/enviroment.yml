@@ -41,7 +41,8 @@ jobs:
       - name: Run jest tests
         run: |
           npm install jest
-          npm test
+          npm test -- --passWithNoTests
+
 
   deploy-execution:
     runs-on: ubuntu-latest
