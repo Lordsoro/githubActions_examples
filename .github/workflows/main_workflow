@@ -1,4 +1,4 @@
-name: jest_workflow
+name: versions
 
 on:
   push:
@@ -46,4 +46,5 @@ jobs:
         run: |
           npm install jest
           npm test
+
 
